@@ -8,7 +8,7 @@ const app = express();
 const path = require ("path");
 
 // import mailer
-const mailer = require ("./mailer.js")
+const mailer = require ("./mailer.js");
 
 // import body-parser
 const bodyParser = require("body-parser");
@@ -46,5 +46,5 @@ app.post("/mail", (req, res) => {
 
 // run server
 app.listen(3000 || process.env.PORT, function() {
-	console.log("Portfolio listening on localhost" );
+	console.log("Portfolio listening on localhost.");
 });
