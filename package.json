@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-minimalist",
+  "name": "minimalist_portfolio",
   "version": "1.0.0",
   "description": "Portfolio for Jesse Matherne",
   "main": "server.js",
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessephilip/portfolio-minimalist.git"
+    "url": "git+https://github.com/jessephilip/portfolioNew.git"
   },
   "author": "jessephilip",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jessephilip/portfolio-minimalist/issues"
+    "url": "https://github.com/jessephilip/portfolioNew/issues"
   },
-  "homepage": "https://github.com/jessephilip/portfolio-minimalist#readme"
+  "homepage": "https://github.com/jessephilip/portfolioNew#readme"
 }
