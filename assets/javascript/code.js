@@ -1,8 +1,5 @@
-//TODO: check out how the text color is changing. It gets screwy.
-
-function getDimensions() {
-    console.log("Width: " + window.innerWidth + ", Height: " + window.innerHeight);
-}
+//TODO: check out how the text color is changing. It gets screwy. Perhaps switch it over to CSS only.
+//TODO: comment code. clean up javascript.
 
 let height = window.innerHeight;
 let width = window.innerWidth;
@@ -21,8 +18,6 @@ var socialLinks = document.getElementsByClassName("fa-3x");
 for (i = 0; i < socialLinks.length; i++) {
     socialLinks[i].style.cursor = "pointer";
 }
-
-// getDimensions();
 
 // click listeners
 
@@ -82,8 +77,6 @@ function loadPortfolio() {
 	portfolioSection.style.zIndex = 1;
 	contactSection.style.zIndex = 0;
 	aboutMeSection.style.zIndex = 0;
-
-	getDimensions();
 }
 
 function loadContact() {
@@ -99,8 +92,6 @@ function loadContact() {
 	portfolioSection.style.zIndex = 0;
 	contactSection.style.zIndex = 1;
 	aboutMeSection.style.zIndex = 0;
-
-	getDimensions();
 }
 
 // this function replaces the black and white profile picture with the full color one
