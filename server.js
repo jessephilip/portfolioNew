@@ -44,7 +44,10 @@ app.post("/mail", (req, res) => {
 
 // ---------- END ---------- //
 
+// setup PORT for server
+let PORT = 3000 || process.env.PORT;
+
 // run server
-app.listen(3000 || process.env.PORT, function() {
+app.listen(PORT, function() {
 	console.log("Portfolio listening on localhost.");
 });
