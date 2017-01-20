@@ -1,9 +1,6 @@
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
 
-// import keys and domain
-const keys = require ("./keys.js");
-
 // This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
 var auth = {
     auth: {
