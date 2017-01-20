@@ -1,13 +1,12 @@
 //TODO: check out how the text color is changing. It gets screwy. Perhaps switch it over to CSS only.
 //TODO: comment code. clean up javascript.
+//TODO:
 
 let height = window.innerHeight;
 let width = window.innerWidth;
 let main = document.getElementById("main");
 let video = document.getElementById("video");
 video.style.height = height + "px";
-//main.style.height = height + "px";
-//main.style.width = width + "px";
 
 var anchors = document.getElementsByTagName("a");
 for (var i = 0; i < anchors.length; i++) {
@@ -96,12 +95,10 @@ function loadContact() {
 
 // this function replaces the black and white profile picture with the full color one
 function colorifyPicture() {
-    console.log("colorify");
     $(".brand-image").attr("src", "images/main-profile.jpg");
 }
 
 function blackAndWhiteify() {
-    console.log("blackandwhiteify");
     $(".brand-image").attr("src", "images/main-profile-bw.jpg");
 }
 
@@ -119,7 +116,6 @@ function pictureSwitch() {
 
     // variable to determine which portfolio div is hovered over
     let id = $(this).children("img").data("value");
-	console.log(id);
 
     // conditional to change the color of the project title. if red make right and vice versa.
     if ($(this).children("h4").css("color") === "rgb(128, 128, 128)") {
@@ -151,7 +147,6 @@ $(".portfolioPics").on("click", (e) => {
     let target = e.target.alt;
     let id = target.split(" ", 1);
     id = id.join();
-    console.log(portfolio[id]);
 
     $('#exampleModal').modal();
     let titleLoc = $("#modalTitle");
