@@ -1,17 +1,17 @@
 // import express
-const express = require ("express");
+let express = require ("express");
 
 // set up express
-const app = express();
+let app = express();
 
 // import path
-const path = require ("path");
+let path = require ("path");
 
 // import mailer
-const mailer = require ("./mailer.js");
+let mailer = require ("./mailer.js");
 
 // import body-parser
-const bodyParser = require("body-parser");
+let bodyParser = require("body-parser");
 
 // set up body-parser
 app.use(bodyParser.json());
