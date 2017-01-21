@@ -1,6 +1,8 @@
 //TODO: check out how the text color is changing. It gets screwy. Perhaps switch it over to CSS only.
 //TODO: comment code. clean up javascript.
-//TODO:
+//TODO: add validator for email validation
+//TODO: fix mobile responsiveness
+//TODO: heroku variables for mailgun
 
 let height = window.innerHeight;
 let width = window.innerWidth;

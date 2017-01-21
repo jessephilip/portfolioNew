@@ -4,8 +4,8 @@ var mg = require('nodemailer-mailgun-transport');
 // This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
 var auth = {
     auth: {
-        api_key: "key-a730d0ff021816dfcce139937a6da884",
-        domain: "sandboxe9910aedccf3408fabfbae6003164dec.mailgun.org"
+        api_key: process.env.mailgun_api,
+        domain: process.env.mailgun_domain
     }
 };
 
