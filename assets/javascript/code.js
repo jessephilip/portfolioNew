@@ -3,6 +3,9 @@
 //TODO: add validator for email validation
 //TODO: fix mobile responsiveness
 
+// first affix resume link to all relevant links
+$(".resume").attr("href", portfolio.resume.url);
+
 let height = window.innerHeight;
 let width = window.innerWidth;
 let main = document.getElementById("main");

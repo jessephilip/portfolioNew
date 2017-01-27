@@ -72,6 +72,10 @@ const portfolio = {
 		"github": "https://github.com/jessephilip/giphy",
 		"tech": ["HTML", "CSS", "Javascript", "jQuery", "Bootstrap", "Google Fonts"],
 		"description": 'Giphy in a Jiffy is a simple application which uses https://api.giphy.com/ to generate giphys based on the user\'s input. It was one of my first forays into dynamically generated content.'
+	},
+
+	"resume": {
+		"url": "https://drive.google.com/file/d/0B5lpNINnrwjkeEhHV21sOW1pTEU/view?usp=sharing"
 	}
 
 };
