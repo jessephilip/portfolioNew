@@ -75,7 +75,7 @@ const portfolio = {
 	},
 
 	"resume": {
-		"url": "https://drive.google.com/file/d/0B5lpNINnrwjkeEhHV21sOW1pTEU/view?usp=sharing"
+		"url": "https://drive.google.com/file/d/0B5lpNINnrwjkWHRzRkc0RWE4eGM/view?usp=sharing"
 	}
 
 };
