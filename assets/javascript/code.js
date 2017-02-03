@@ -6,10 +6,10 @@
 // first affix resume link to all relevant links
 $(".resume").attr("href", portfolio.resume.url);
 
-let height = window.innerHeight;
-let width = window.innerWidth;
-let main = document.getElementById("main");
-let video = document.getElementById("video");
+var height = window.innerHeight;
+var width = window.innerWidth;
+var main = document.getElementById("main");
+var video = document.getElementById("video");
 video.style.height = height + "px";
 
 var anchors = document.getElementsByTagName("a");
@@ -49,8 +49,8 @@ $(".brand-image").mouseout(blackAndWhiteify);
 function loadAboutMe() {
 	$('html,body').scrollTop(0);
 	$("html").css("overflow-y", "scroll");
-    let aboutMeSection = document.getElementById("aboutMeSection");
-    let intro = document.getElementById("intro");
+    var aboutMeSection = document.getElementById("aboutMeSection");
+    var intro = document.getElementById("intro");
 	$("#title-text").css("height", window.innerHeight);
 	$("#dialogue-text").css("margin-top", (window.innerHeight / 4));
 	$("#resumeDiv").css("margin-top", (window.innerHeight / 4));
@@ -119,7 +119,7 @@ $(".portfolioPic").mouseout(pictureSwitch);
 function pictureSwitch() {
 
     // variable to determine which portfolio div is hovered over
-    let id = $(this).children("img").data("value");
+    var id = $(this).children("img").data("value");
 
     // conditional to change the color of the project title. if red make right and vice versa.
     if ($(this).children("h4").css("color") === "rgb(128, 128, 128)") {
@@ -128,13 +128,13 @@ function pictureSwitch() {
         $(this).children("h4").css("color", "grey");
 
     // variable to hold image source tag
-    let imgSrc;
+    var imgSrc;
 
     // variable for the preface of the image source tag
-    let loc = "images/";
+    var loc = "images/";
 
     // variable pointing to the img element in the div
-    let imgTag = $(this).children("img");
+    var imgTag = $(this).children("img");
 
     // if img src has "_bw" change the img src to the color image and vice versa
     if (imgTag.attr("src").indexOf("_bw") === -1) {
@@ -147,26 +147,26 @@ function pictureSwitch() {
 }
 
 // clickfunction for clicking on a portfolio project picture. loads a sweetalert modal
-$(".portfolioPics").on("click", (e) => {
-    let target = e.target.alt;
-    let id = target.split(" ", 1);
+$(".portfolioPics").on("click", function(e) {
+    var target = e.target.alt;
+    var id = target.split(" ", 1);
     id = id.join();
 
     $('#exampleModal').modal();
-    let titleLoc = $("#modalTitle");
+    var titleLoc = $("#modalTitle");
     titleLoc.text(portfolio[id].name);
 
-    let imgLoc = $("#modalImg");
+    var imgLoc = $("#modalImg");
     imgLoc.attr("src", portfolio[id].photo);
     imgLoc.attr("alt", portfolio[id].name + " color image.");
 
     $("#modalList").html("");
 
     // create an <li> element to add the technologies text
-    let techLi = $("<li>");
+    var techLi = $("<li>");
 
     // prepare technologies array for modal by converting to string
-    let tech = portfolio[id].tech.join();
+    var tech = portfolio[id].tech.join();
     tech = tech.replace(/,/g, ", ");
     techLi.text("Technologies: " + tech);
 
@@ -178,10 +178,10 @@ $(".portfolioPics").on("click", (e) => {
         if (portfolio[id].npm.length > 0) {
 
             // create an <li> element to add the npm text
-            let npmLi = $("<li>");
+            var npmLi = $("<li>");
 
             // manipulate the npm array to be presentable on the modal as a string
-            let npm = portfolio[id].npm.join();
+            var npm = portfolio[id].npm.join();
             npm = npm.replace(/,/g, ", ");
             npmLi.text("NPM Packages: " + npm);
 
@@ -199,12 +199,12 @@ $(".portfolioPics").on("click", (e) => {
 });
 
 // clicklistener to send mailer
-$("#sendButton").on("click", () => {
+$("#sendButton").on("click", function() {
 
 	// get user input values
-	let name = $("#nameInput").val().trim();
-	let email= $("#emailInput").val().trim();
-	let message = $("#messageInput").val().trim();
+	var name = $("#nameInput").val().trim();
+	var email= $("#emailInput").val().trim();
+	var message = $("#messageInput").val().trim();
 
 	// ajax call to send user's input and send mail
 	$.ajax({
