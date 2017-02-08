@@ -5,7 +5,7 @@
   "main": "mailer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,10 @@
     "express": "^4.14.0",
     "nodemailer": "^2.7.0",
     "nodemailer-mailgun-transport": "^1.2.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-uglify": "^2.1.0"
   }
 }
