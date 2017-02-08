@@ -1,165 +1,101 @@
-//TODO: check out how the text color is changing. It gets screwy. Perhaps switch it over to CSS only.
-//TODO: comment code. clean up javascript.
 //TODO: add validator for email validation
 //TODO: fix mobile responsiveness
+//TODO: fix for other browsers
+//TODO: if browser cannot play video, have it show an image instead
 
-// first affix resume link to all relevant links
+// affix resume link to all relevant links
 $(".resume").attr("href", portfolio.resume.url);
 
-var height = window.innerHeight;
-var width = window.innerWidth;
-var main = document.getElementById("main");
-var video = document.getElementById("video");
-video.style.height = height + "px";
-
-var anchors = document.getElementsByTagName("a");
-for (var i = 0; i < anchors.length; i++) {
-    anchors[i].style.cursor = "pointer";
+// check if browser can play video
+if (!!document.createElement('video').canPlayType === true) {
+    // run some code that relies on HTML5 video
+    //console.log("can play");
+} else {
+    // do something else
+    //console.log("can't play");
 }
 
-var socialLinks = document.getElementsByClassName("fa-3x");
-for (i = 0; i < socialLinks.length; i++) {
-    socialLinks[i].style.cursor = "pointer";
-}
+// on startup, load the about me section
+loadAboutMe();
 
-// click listeners
+document.getElementById("dropdown").addEventListener("click", function(e) {
+	var pos = document.getElementById("dropdown").getBoundingClientRect();
+	//console.log("pos: ", pos);
 
-// click listener for the about me section
-var aboutMeButton = document.getElementsByClassName("aboutMe");
+	var left = pos.left;
+	document.getElementById('menu').style.left = left + "px";
+});
 
-// click listener for the portfolio section
-var portfolioButton = document.getElementsByClassName("portfolio");
 
-// click listener for the contact section
-var contactButton = document.getElementsByClassName("contactMe");
-
-for (var i = 0; i < aboutMeButton.length; i++) {
-    aboutMeButton[i].addEventListener("click", loadAboutMe);
-    portfolioButton[i].addEventListener("click", loadPortfolio);
-    contactButton[i].addEventListener("click", loadContact);
-}
-
-// event listeners
-$(".brand-image").mouseover(colorifyPicture);
-$(".brand-image").mouseout(blackAndWhiteify);
-
-// functions
-
-// function for the aboutMeButton (About Me Section)
+// function for loading the aboutMeSection
 function loadAboutMe() {
-	$('html,body').scrollTop(0);
-	$("html").css("overflow-y", "scroll");
+
+    // locator for the about me section
     var aboutMeSection = document.getElementById("aboutMeSection");
-    var intro = document.getElementById("intro");
-	$("#title-text").css("height", window.innerHeight);
-	$("#dialogue-text").css("margin-top", (window.innerHeight / 4));
-	$("#resumeDiv").css("margin-top", (window.innerHeight / 4));
-	$("#techArticle").css("margin-top", (window.innerHeight / 4));
-    intro.className = "fadeOut";
-	portfolioSection.className = "fadeOut";
-	contactSection.className = "fadeOut";
+
+    $('html,body').scrollTop(0);
+    $("#title-text").css("height", window.innerHeight);
+    $("#dialogue-text").css("margin-top", (window.innerHeight / 4));
+    $("#resumeDiv").css("margin-top", (window.innerHeight / 4));
+    $("#techArticle").css("margin-top", (window.innerHeight / 4));
+    portfolioSection.className = "fadeOut";
+    contactSection.className = "fadeOut";
     aboutMeSection.style.display = "initial";
     aboutMeSection.className = "fadeIn";
-	portfolioSection.style.zIndex = 0;
-	contactSection.style.zIndex = 0;
-	aboutMeSection.style.zIndex = 1;
+    portfolioSection.style.zIndex = 0;
+    contactSection.style.zIndex = 0;
+    aboutMeSection.style.zIndex = 1;
 
 }
 
 function loadPortfolio() {
-	$('html,body').scrollTop(0);
-	$("html").css("overflow-y", "hidden");
+    $('html,body').scrollTop(0);
     var portfolioSection = document.getElementById("portfolioSection");
-    var intro = document.getElementById("intro");
-	$("#portfolioSection").css("height", window.innerHeight);
-    intro.className = "fadeOut";
-	aboutMeSection.className = "fadeOut";
-	contactSection.className = "fadeOut";
+    $("#portfolioSection").css("height", window.innerHeight);
+    aboutMeSection.className = "fadeOut";
+    contactSection.className = "fadeOut";
     portfolioSection.style.display = "initial";
     portfolioSection.className = "fadeIn";
-	portfolioSection.style.zIndex = 1;
-	contactSection.style.zIndex = 0;
-	aboutMeSection.style.zIndex = 0;
+    portfolioSection.style.zIndex = 1;
+    contactSection.style.zIndex = 0;
+    aboutMeSection.style.zIndex = 0;
 }
 
-function loadContact() {
-	$('html,body').scrollTop(0);
-	$("html").css("overflow-y", "hidden");
+function loadContactMe() {
+    $('html,body').scrollTop(0);
     var contactSection = document.getElementById("contactSection");
-    var intro = document.getElementById("intro");
-    intro.className = "fadeOut";
-	portfolioSection.className = "fadeOut";
-	aboutMeSection.className = "fadeOut";
+    portfolioSection.className = "fadeOut";
+    aboutMeSection.className = "fadeOut";
     contactSection.style.display = "initial";
     contactSection.className = "fadeIn";
-	portfolioSection.style.zIndex = 0;
-	contactSection.style.zIndex = 1;
-	aboutMeSection.style.zIndex = 0;
+    portfolioSection.style.zIndex = 0;
+    contactSection.style.zIndex = 1;
+    aboutMeSection.style.zIndex = 0;
 }
 
-// this function replaces the black and white profile picture with the full color one
-function colorifyPicture() {
-    $(".brand-image").attr("src", "images/main-profile.jpg");
-}
-
-function blackAndWhiteify() {
-    $(".brand-image").attr("src", "images/main-profile-bw.jpg");
-}
-
-var portfolioArray = document.getElementsByClassName("portfolioPic")
-for (var i = 0; i < portfolioArray.length; i++) {
-    portfolioArray[i].style.cursor = "pointer";
-}
-
-// click listener
-$(".portfolioPic").mouseover(pictureSwitch);
-$(".portfolioPic").mouseout(pictureSwitch);
-
-// this function will change the portfolio picture from black and white to color
-function pictureSwitch() {
-
-    // variable to determine which portfolio div is hovered over
-    var id = $(this).children("img").data("value");
-
-    // conditional to change the color of the project title. if red make right and vice versa.
-    if ($(this).children("h4").css("color") === "rgb(128, 128, 128)") {
-        $(this).children("h4").css("color", "white");
-    } else
-        $(this).children("h4").css("color", "grey");
-
-    // variable to hold image source tag
-    var imgSrc;
-
-    // variable for the preface of the image source tag
-    var loc = "images/";
-
-    // variable pointing to the img element in the div
-    var imgTag = $(this).children("img");
-
-    // if img src has "_bw" change the img src to the color image and vice versa
-    if (imgTag.attr("src").indexOf("_bw") === -1) {
-        imgSrc = $(this).data("bw");
-        imgTag.attr("src", portfolio[id].photo_small_bw);
-    } else {
-        imgSrc = $(this).data("color");
-        imgTag.attr("src", portfolio[id].photo_small);
-    }
-}
-
-// clickfunction for clicking on a portfolio project picture. loads a sweetalert modal
+// clickfunction for clicking on a portfolio project picture. loads a bootstrap modal
 $(".portfolioPics").on("click", function(e) {
+
+    // get the alternate tag from the clicked item
     var target = e.target.alt;
+
+    // split the string once and keep the first split
     var id = target.split(" ", 1);
     id = id.join();
 
-    $('#exampleModal').modal();
+    // show the modal
+    $('#modalTemplate').modal();
+
+    // set the modal's title to the name in the portfolio object
     var titleLoc = $("#modalTitle");
     titleLoc.text(portfolio[id].name);
 
+    // set the img to the src in the portfolio object
     var imgLoc = $("#modalImg");
     imgLoc.attr("src", portfolio[id].photo);
     imgLoc.attr("alt", portfolio[id].name + " color image.");
 
+    // clear out any list items that may have previously been on the modal
     $("#modalList").html("");
 
     // create an <li> element to add the technologies text
@@ -173,7 +109,7 @@ $(".portfolioPics").on("click", function(e) {
     // append to the <ul> element
     $("#modalList").append(techLi);
 
-    // conditional to see if npm packages are present
+    // conditional to see if npm packages are listed in the portfolio object
     if (portfolio[id].hasOwnProperty("npm")) {
         if (portfolio[id].npm.length > 0) {
 
@@ -190,10 +126,13 @@ $(".portfolioPics").on("click", function(e) {
         }
     }
 
+    // set text for the description of the modal as written in the portfolio object
     $("#modalDesc").text(portfolio[id].description);
 
+    // set the github href for the modal as provided in the portfolio object
     $("#modalGithub").attr("href", portfolio[id].github);
 
+    // set the heroku href for the modal as provided in the portfolio object
     $("#modalHeroku").attr("href", portfolio[id].heroku);
 
 });
@@ -201,29 +140,31 @@ $(".portfolioPics").on("click", function(e) {
 // clicklistener to send mailer
 $("#sendButton").on("click", function() {
 
-	// get user input values
-	var name = $("#nameInput").val().trim();
-	var email= $("#emailInput").val().trim();
-	var message = $("#messageInput").val().trim();
+    // get user input values
+    var name = $("#nameInput").val().trim();
+    var email = $("#emailInput").val().trim();
+    var message = $("#messageInput").val().trim();
 
-	// ajax call to send user's input and send mail
-	$.ajax({
-		url: '/mail',
-		type: 'POST',
-		data: {name: name, email: email, message: message}
-	})
-	.done(function(data) {
+    // ajax call to send user's input and send mail
+    $.ajax({
+        url: '/mail',
+        type: 'POST',
+        data: {
+            name: name,
+            email: email,
+            message: message
+        }
+    }).done(function(data) {
 
-		// send comfirmation alert
-		vex.dialog.alert("Thank you for sending me a message! I'll get back to you soon.");
+        // send comfirmation alert
+        vex.dialog.alert("Thank you for sending me a message! I'll get back to you soon.");
 
-		// clear user inputs
-		$("#nameInput").val("");
-		$("#emailInput").val("");
-		$("#messageInput").val("");
+        // clear user inputs
+        $("#nameInput").val("");
+        $("#emailInput").val("");
+        $("#messageInput").val("");
 
-	})
-	.fail(function() {
-		vex.dialog.alert("Oops. Something went wrong. Please try again.");
-	});
+    }).fail(function() {
+        vex.dialog.alert("Oops. Something went wrong. Please try again.");
+    });
 });

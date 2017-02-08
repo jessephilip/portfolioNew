@@ -1,24 +1,113 @@
-html {
-    overflow-x: hidden;
-}
+/* TODO: clean up CSS. Comment and organize code. */
+/* TODO: Colors and visibility of tech row paragraphs show up independent of icons*/
+
+
+/* ---------- GLOBAL ATTRIBUTES ---------- */
 
 body {
     background: black;
     font-family: 'Raleway', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-size: 20px;
 }
 
-h1,h2,h3 {
-	font-family: "Open Sans", sans-serif;
+h1, h2, h3 {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+	font-size: 3.5em;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+h3 {
+	font-size: 2.5em;
+}
+
+h4 {
+	font-size: 2em;
+}
+
+h5 {
+	font-size: 1.5em;
+}
+
+h6 {
+	font-size: 1em;
 }
 
 a {
-	cursor: pointer;
+    cursor: pointer;
 }
 
-#intro a {
-	font-family: "Open Sans", sans-serif;
+a:visited, a:link, a:active {
+    color: grey;
+    text-decoration: none;
+}
+
+
+/*@media only screen and (max-width: 1060px) {
+    #intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+    }
+}*/
+
+
+/*#intro a {
+    font-family: "Open Sans", sans-serif;
+}*/
+
+
+/* ---------- NAVBAR STYLING ---------- */
+
+nav {
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+}
+
+
+/* ---------- MAIN STYLING ---------- */
+
+main {
+    /*height: 90vh;*/
+    /*margin-top: 10vh;*/
+}
+
+
+/* ---------- ABOUT ME STYLING ---------- */
+
+#aboutMeSection video {
+	margin-top: 10vh;
+    position: absolute;
+    z-index: -100;
+    height: 90vh;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
 }
 
 #title-text {
@@ -29,56 +118,24 @@ a {
     flex-direction: column;
 }
 
-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
-}
-
-a:visited, a:link, a:active {
-    color: grey;
-    text-decoration: none;
-}
-
-.parent {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .main-text {
     margin: 0 auto;
     width: 70%;
 }
 
 .dropdown-menu {
-	background: white;
-	border: 0px;
-	box-shadow: unset;
-	border-radius: 0px;
-	min-width: 100% !important;
+    background: white;
+    border: 0px;
+    box-shadow: unset;
+    border-radius: 0px;
+	left: inherit;
+    /*min-width: 100% !important;*/
+}
 
+.techrow {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .flex {
@@ -89,29 +146,15 @@ a:visited, a:link, a:active {
 }
 
 .show {
-	display: initial;
+    display: initial;
 }
 
 .hide {
     display: none;
 }
 
-.aButton {
-    padding: 10px;
-    /* border: 1px solid white; */
-    margin: 0 50px;
-}
-
-.navbar-inverse {
-    display: flex;
-    position: fixed;
-    width: 100%;
-    top: 0;
-	z-index: 50;
-}
-
 #aaa {
-	z-index: 100;
+    z-index: 100;
 }
 
 .socialDiv {
@@ -124,7 +167,7 @@ a:visited, a:link, a:active {
 }
 
 .big {
-    font-size: 50px;
+    font-size: 2.5em;
 }
 
 .dev-icon {
@@ -153,70 +196,191 @@ a:visited, a:link, a:active {
     height: 100%;
 }
 
+
+/*changes the color of the profile picture on hover*/
+
+.brand-image:hover {
+    content: url("../images/main-profile.jpg");
+}
+
 .techIcons i {
     font-size: 125px;
 }
 
+/* toggles label visibility */
+
+.deviconshtml5 p {
+	visibility: hidden;
+}
+
+.deviconshtml5:hover p {
+	visibility: visible;
+}
+
+.deviconscss3 p {
+	visibility: hidden;
+}
+
+.deviconscss3:hover p {
+	visibility: visible;
+}
+
+.deviconsjavascript p {
+	visibility: hidden;
+}
+
+.deviconsjavascript:hover p {
+	visibility: visible;
+}
+
+.deviconsjquery p {
+	visibility: hidden;
+}
+
+.deviconsjquery:hover p {
+	visibility: visible;
+}
+
+.deviconsgit p {
+	visibility: hidden;
+}
+
+.deviconsgit:hover p {
+	visibility: visible;
+}
+
+.deviconsnodejs_small p {
+	visibility: hidden;
+}
+
+.deviconsnodejs_small:hover p {
+	visibility: visible;
+}
+
+.deviconsnpm p {
+	visibility: hidden;
+}
+
+.deviconsnpm:hover p {
+	visibility: visible;
+}
+
+.deviconsbootstrap p {
+	visibility: hidden;
+}
+
+.deviconsbootstrap:hover p {
+	visibility: visible;
+}
+
+.deviconsmaterializecss p {
+	visibility: hidden;
+}
+
+.deviconsmaterializecss:hover p {
+	visibility: visible;
+}
+
+.deviconsheroku p {
+	visibility: hidden;
+}
+
+.deviconsheroku:hover p {
+	visibility: visible;
+}
+
+.deviconsgithub_badge p {
+	visibility: hidden;
+}
+
+.deviconsgithub_badge:hover p {
+	visibility: visible;
+}
+
+.deviconsmongodb p {
+	visibility: hidden;
+}
+
+.deviconsmongodb:hover p {
+	visibility: visible;
+}
+
+.deviconsmysql p {
+	visibility: hidden;
+}
+
+.deviconsmysql:hover p {
+	visibility: visible;
+}
+
+.deviconsreact p {
+	visibility: hidden;
+}
+
+.deviconsreact:hover p {
+	visibility: visible;
+}
+
 /* icon color changes */
 
-.devicons-html5:hover {
+.deviconshtml5:hover, .devicons-html5:hover  {
     color: #e44d26;
 }
 
-.devicons-css3:hover {
+.devicons-css3:hover, .deviconscss3:hover {
     color: #0c73b5;
 }
 
-.devicons-javascript:hover {
+.devicons-javascript:hover, .deviconsjavascript:hover {
     color: gold;
 }
 
-.devicons-jquery:hover {
+.devicons-jquery:hover, .deviconsjquery:hover {
     color: #78cef4;
 }
 
-.devicons-heroku:hover {
+.devicons-heroku:hover, .deviconsheroku:hover {
     color: #6661a5;
 }
 
-.devicons-github_badge:hover {
+.devicons-github_badge:hover, .deviconsgithub_badge:hover {
     color: white;
 }
 
-.devicons-git:hover {
+.devicons-git:hover, .deviconsgit:hover {
     color: #f34f29;
 }
 
-.devicons-bootstrap:hover {
+.devicons-bootstrap:hover, .deviconsbootstrap:hover {
     color: #614789;
 }
 
-.devicons-mongodb:hover {
+.devicons-mongodb:hover, .deviconsmongodb:hover {
     color: #409d39;
 }
 
-.devicons-mysql:hover {
+.devicons-mysql:hover, .deviconsmysql:hover {
     color: #00618a;
 }
 
-.devicons-nodejs_small:hover {
+.devicons-nodejs_small:hover, .deviconsnodejs_small:hover {
     color: #8cc84b;
 }
 
-.devicons-react:hover {
+.devicons-react:hover, .deviconsreact:hover {
     color: #00d7ff;
 }
 
-.devicons-npm:hover {
-	color: #cd3632;
+.devicons-npm:hover, .deviconsnpm:hover {
+    color: #cd3632;
 }
 
-.devicons-materializecss:hover {
-	color: #ee6e73;
+.devicons-materializecss:hover, .deviconsmaterializecss:hover {
+    color: #ee6e73;
 }
 
 .fa-expand {
-	width: 42px !important;
+    width: 42px !important;
 }
 
 .fa-facebook:hover {
@@ -226,6 +390,11 @@ a:visited, a:link, a:active {
 .fa-linkedin:hover {
     color: #0077b5;
 }
+
+.fa-twitter-square:hover {
+	color: #1da1f2;
+}
+
 
 /* Pulse Grow */
 
@@ -242,38 +411,45 @@ a:visited, a:link, a:active {
         transform: scale(1.1);
     }
 }
+
+
 /* img grow */
+
 img.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-img.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(2.2);
-  transform: scale(2.2);
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
 }
 
-/* Grow */
-.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
+img.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(2.2);
+    transform: scale(2.2);
 }
+
+
+/* Grow */
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .hvr-pulse-grow {
@@ -297,20 +473,23 @@ img.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
     animation-direction: alternate;
 }
 
+
 /* Glow */
+
 .hvr-glow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
 }
+
 .hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
-  box-shadow: 0 0 50px rgba(255, 255, 0, 0.6);
+    box-shadow: 0 0 50px rgba(255, 255, 0, 0.6);
 }
 
 
@@ -327,13 +506,13 @@ img.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
     bottom: 0;
 }
 
-#contactSection {
-	margin-top: 65px;
+#aboutMeSection {
+    display: inherit;
 }
 
 #inputs {
-	width: 50%;
-	margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
 }
 
 
@@ -482,98 +661,128 @@ img.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
 
 /* -------------------------------------------------------------*/
 
-#portfolioMain {
-	width: 70%;
+#portfolioSection, #contactSection {
+	margin-top: 10vh;
 }
 
-#portfolioMain .row {
-	margin-top: 25px;
+#portfolioSection {
+    width: 70%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#portfolioHeading {
-	margin-top: 0;
-}
-
-#portfolioHeading h1 {
-	margin-top: 65px;
+#portfolioSection .row {
+    margin-top: 5vh;
 }
 
 .picControls {
-	background-color: black;
-	width: 100%;
-	font-size: 3em;
-	z-index: 25;
+    background-color: black;
+    width: 100%;
+    font-size: 3em;
+    z-index: 25;
 }
 
-.parent-col {
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-
-}
 
 /* ---------- Modal CSS ---------- */
 
 #modalImg {
-	border: 2px solid black;
-	margin: 0 auto;
-	width: 80%;
-	box-shadow: 7px 7px 5px #888888;
+    border: 2px solid black;
+    margin: 0 auto;
+    width: 80%;
+    box-shadow: 7px 7px 5px #888888;
 }
 
 #modalList {
-	width: 95%;
-	margin: 15px auto;
+    width: 95%;
+    margin: 15px auto;
 }
 
 #modalDesc {
-	width: 80%;
-	margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
 #modalGithub {
-	background-color: black;
-	color: white;
+    background-color: black;
+    color: white;
 }
 
 #modalHeroku {
-	background-color: #6661a5;
-	color: white;
+    background-color: #6661a5;
+    color: white;
 }
 
 #modalHeroku i {
-	color: white;
+    color: white;
 }
 
-.modal-content  {
+.modal-content {
     -webkit-border-radius: 0px !important;
     -moz-border-radius: 0px !important;
     border-radius: 0px !important;
 }
 
 .btn {
-	border-radius: 0px;
+    border-radius: 0px;
 }
 
 .form-control, .input-group, .input-group-lg, .input-group-addon {
-	-webkit-border-radius: 0;
-     -moz-border-radius: 0;
-          border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 
 .col-md-5 {
-	padding: 0px;
+    padding: 0px;
 }
 
 #textarea, #nameRow {
-	margin-top: 24px;
+    margin-top: 24px;
 }
 
 #sendButton {
-	margin-top: 12px;
-	color: grey;
+    margin-top: 12px;
+    color: grey;
 }
 
 #sendButton:hover {
-	color: black;
+    color: black;
+}
+
+
+/* color swapping for the portfolioPic text */
+
+.portfolioPic {
+    color: grey;
+}
+
+.portfolioPic:hover {
+    color: white;
+}
+
+
+/* color swapping for the portfolio sections portfolio thumbnails */
+
+#hangmanPic:hover img {
+    content: url("../images/hangman_edited_small.jpg");
+}
+
+#fetchPic:hover img {
+    content: url("../images/fetch_edited_small.jpg");
+}
+
+#weddingPic:hover img {
+    content: url("../images/wedding_edited_small.jpg");
+}
+
+#mtgPic:hover img {
+    content: url("../images/mtg_console_edited_small.jpg");
+}
+
+#giphyPic:hover img {
+    content: url("../images/giphy_edited_small.jpg");
+}
+
+#rangerPic:hover img {
+    content: url("../images/ranger_edited_small.jpg");
 }

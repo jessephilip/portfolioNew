@@ -6,7 +6,8 @@
 	<title>Portfolio</title>
 	<link rel="shortcut icon" href="images/favicon.ico" />
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 	<!-- Font Awesome -->
 	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 	<!-- Devicons CSS -->
@@ -23,286 +24,264 @@
 </head>
 
 <body>
-	<main id="main" class="parent">
-		<div id="intro">
-			<a class="aboutMe aButton big text-grey hvr-pulse-grow">About Me</a>
-			<a class="portfolio aButton big text-grey hvr-pulse-grow">Portfolio</a>
-			<a class="contactMe aButton big text-grey hvr-pulse-grow">Contact Me</a>
-		</div>
-	</main>
-
-	<section id="aboutMeSection">
-		<nav id="aboutMeNav" class="navbar navbar-inverse parent-col">
-			<ul class="nav navbar-nav navbar-left">
-				<li>
-					<a class="aboutMe text-grey hvr-grow">About Me</a>
-				</li>
-
-				<li>
-					<a class="resume text-grey hvr-grow dropdown-toggle" data-toggle="dropdown">Social Links
+	<nav>
+		<a class="aboutMe text-grey hvr-grow" onclick="loadAboutMe()">About Me</a>
+		<a id="dropdown" class="resume text-grey hvr-grow dropdown-toggle" data-toggle="dropdown">Social Links
 					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="text-center" href="https://www.linkedin.com/in/jessematherne/" target="_blank">linkedIn</a></li>
-						<li>
-							<a class="text-center" href="https://github.com/jessephilip" target="_blank">gitHub</a></li>
-						<li>
-							<a class="text-center" href="https://www.facebook.com/jpmatherne" target="_blank">faceBook</a></li>
-					</ul>
-				</li>
+		<ul id="menu" class="dropdown-menu dropdown-menu-left">
+			<li>
+				<a class="text-center" href="https://github.com/jessephilip" target="_blank">github</a></li>
+			<li>
+				<a class="text-center" href="https://www.linkedin.com/in/jessematherne/" target="_blank">linkedin</a></li>
+			<li>
+				<a class="text-center" href="https://www.facebook.com/jpmatherne" target="_blank">facebook</a></li>
+			<li>
+				<a class="text-center" href="https://twitter.com/JesseMatherne" target="_blank">twitter</a></li>
+			<li>
+				<a class="text-center" href="http://codepen.io/jessephilip/" target="_blank">codepen</a></li>
+		</ul>
 
-				<li>
-					<a class="navbar-brand resume" href="" target="_blank">
-						<img class="brand-image img-responsive img-circle hvr-grow" src="images/main-profile-bw.jpg" alt="Jesse Matherne profile picture">
-					</a>
-				</li>
+		<a class="navbar-brand resume" href="" target="_blank">
+			<img class="brand-image img-responsive img-circle hvr-grow" src="images/main-profile-bw.jpg" alt="Jesse Matherne profile picture">
+		</a>
 
-				<li>
-					<a class="portfolio text-grey hvr-grow">Portfolio</a>
-				</li>
-				<li>
-					<a class="contactMe text-grey hvr-grow">Contact Me</a>
-				</li>
-			</ul>
+		<a class="portfolio text-grey hvr-grow" onclick="loadPortfolio()">Portfolio</a>
+		<a class="contactMe text-grey hvr-grow" onclick="loadContactMe()">Contact Me</a>
 
-		</nav>
+	</nav>
 
-		<article class="container">
+	<main class="container-fluid">
+		<section id="aboutMeSection">
 			<video id="video" playsinline autoplay muted loop>
 				<source src="images/trialbackground-dark.mp4" type="video/mp4">
+					Your browser does not support the video tag.
 			</video>
-			<article>
-				<div id="title-text">
-					<h1 class="text-center">Jesse Matherne</h1>
-					<!-- <h1 class="text-center">MATHERNE</h1> -->
-					<h4 class="text-center">Web Developer</h4>
-					<div class="socialDiv text-center">
-						<a class="fa fa-linkedin fa-3x text-grey" href="https://www.linkedin.com/in/jessematherne/" target="_blank"></a>
-						<a class="fa fa-github fa-3x text-grey" href="https://github.com/jessephilip" target="_blank"></a>
-						<a class="fa fa-facebook fa-3x text-grey" href="https://www.facebook.com/jpmatherne" target="_blank"></a>
-					</div>
+			<article id="title-text">
+				<h1 class="text-center">Jesse Matherne</h1>
+				<h4 class="text-center">Web Developer</h4>
+				<div class="socialDiv text-center">
+					<a class="fa fa-github fa-3x text-grey" href="https://github.com/jessephilip" target="_blank"></a>
+					<a class="fa fa-linkedin fa-3x text-grey" href="https://www.linkedin.com/in/jessematherne/" target="_blank"></a>
+					<a class="fa fa-facebook fa-3x text-grey" href="https://www.facebook.com/jpmatherne" target="_blank"></a>
+					<a class="fa fa-twitter-square fa-3x text-grey" href="https://twitter.com/JesseMatherne" target="_blank"></a>
+					<a class="fa fa-codepen fa-3x text-grey" href="http://codepen.io/jessephilip/" target="_blank"></a>
 				</div>
-				<div id="dialogue-text">
-					<h3 class="text-center">Hi! I'M JESSE MATHERNE</h3>
-					<h3 class="text-center">AND I AM A FULL STACK WEB DEVELOPER.</h3>
-					<br />
-					<p class="text-center main-text">
-						Welcome to my portfolio. As you look around, you will see what I am passionate about: Coding. I have been coding, off and on for nearly twenty years. Unfortunately, most of that time was off, but recently, I decided to throw my plans to the wind and pursue
-						this lifetime hobby of mine as my profession. I put down the law books, gave up my pursuit of the gavel, and entrenched myself in the ever-evolving life of a developer.
-						<br />
-						<br /> I'm slated to complete UT's Coding Boot Camp in about a month, and I have many different projects currently in the works. You can find most of them on my Github account. Feel free to look them over and contact me if you have any comments
-						or questions.
-						<br />
-						<br /> I'll throw some flare in here as well, so that anyone visiting here will not only get to meet Me the Developer, but Me the Person as well. Hope to talk to you soon. Have fun!!!
-					</p>
-				</div>
-
-				<div id="resumeDiv">
-					<h3 class="text-center">R&eacute;sum&eacute;</h3>
-					<p class="text-center">
-						Please take a look at my r&eacute;sum&eacute; if you are the hiring type.
-					</p>
-					<div class="text-center">
-						<a id="resumeLink" class="text-grey resume" href="" target="_blank">
-							<i class="hvr-pulse-grow hvr-glow fa fa-file-text-o fa-3x"></i>
-						</a>
-					</div>
-				</div>
-
-				<article id="techArticle" class="techIcons">
-					<h3 id="skillsH3" class="text-center">Skills</h3>
-					<p class="text-center">
-						Below are the technologies that I know. I love learning and mastering my skills, so this list will continue to grow.
-					</p>
-					<div class="text-center">
-						<i class="devicons devicons-html5 text-grey"></i>
-						<i class="devicons devicons-css3 text-grey"></i>
-						<i class="devicons devicons-javascript text-grey"></i>
-						<i class="devicons devicons-jquery text-grey"></i>
-						<i class="devicons devicons-git text-grey"></i>
-						<i class="devicons devicons-nodejs_small text-grey"></i>
-						<i class="devicons devicons-npm text-grey"></i>
-					</div>
-					<br />
-					<br />
-					<div class="text-center">
-						<i class="devicons devicons-bootstrap text-grey"></i>
-						<i class="devicons devicons-materializecss text-grey"></i>
-						<i class="devicons devicons-heroku text-grey"></i>
-						<i class="devicons devicons-github_badge text-grey"></i>
-						<i class="devicons devicons-mongodb text-grey"></i>
-						<i class="devicons devicons-mysql text-grey"></i>
-						<i class="devicons devicons-react text-grey"></i>
-					</div>
-				</article>
 			</article>
-		</article>
-		<br />
-		<br />
-		<br />
-	</Section>
-
-	<section id="portfolioSection">
-		<nav id="portfolioNav" class="navbar navbar-inverse parent-col">
-			<ul class="nav navbar-nav navbar-left">
-				<li>
-					<a class="aboutMe text-grey hvr-grow">About Me</a>
-				</li>
-
-				<li>
-					<a class="resume text-grey hvr-grow dropdown-toggle" data-toggle="dropdown">Social Links
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="text-center" href="https://www.linkedin.com/in/jessematherne/" target="_blank">linkedIn</a></li>
-						<li>
-							<a class="text-center" href="https://github.com/jessephilip" target="_blank">gitHub</a></li>
-						<li>
-							<a class="text-center" href="https://www.facebook.com/jpmatherne" target="_blank">faceBook</a></li>
-					</ul>
-				</li>
-
-				<li>
-					<a class="navbar-brand resume" href="" target="_blank">
-						<img class="brand-image img-responsive img-circle hvr-grow" src="images/main-profile-bw.jpg" alt="Jesse Matherne profile picture">
+			<article id="dialogue-text">
+				<h3 class="text-center">Full-Stack Developer Extraordinaire</h3>
+				<br />
+				<p class="text-center main-text">
+					Welcome to my portfolio. As you look around, you will see what I am passionate about: Coding. I have been coding, off and on for nearly twenty years. Unfortunately, most of that time was off, but recently, I decided to throw my plans to the wind and pursue
+					this lifetime hobby of mine as my profession. I put down the law books, gave up my pursuit of the gavel, and entrenched myself in the ever-evolving life of a developer.
+					<br />
+					<br /> I am a graduate of the Full-Stack Web Developer program at the University of Texas in Austin.
+					<br />
+					<br /> I'll throw some flare in here as well, so that anyone visiting here will not only get to meet Me-the-Developer, but Me-the-Person as well. Hope to talk to you soon. Have fun!!!
+				</p>
+			</article>
+			<article id="resumeDiv">
+				<h3 class="text-center">R&eacute;sum&eacute;</h3>
+				<br/>
+				<p class="text-center">
+					Please take a look at my r&eacute;sum&eacute; if you want to see something awesome .
+				</p>
+				<br/>
+				<div class="text-center">
+					<a id="resumeLink" class="text-grey resume" href="" target="_blank">
+						<i class="hvr-pulse-grow hvr-glow fa fa-file-text-o fa-3x"></i>
 					</a>
-				</li>
+				</div>
+			</article>
+			<article id="techArticle" class="techIcons">
+				<h3 id="skillsH3" class="text-center">Skills</h3>
+				<br/>
+				<p class="text-center">
+					Below are the technologies that I know. I love learning and mastering my skills, so this list will continue to grow.
+				</p>
+				<br/>
+				<div class="text-center techrow">
+					<div class="deviconshtml5">
+						<i class="devicons devicons-html5 text-grey"></i>
+						<p>
+							HTML
+						</p>
+					</div>
+					<div class="deviconscss3">
+						<i class="devicons devicons-css3 text-grey"></i>
+						<p>
+							CSS
+						</p>
+					</div>
+					<div class="deviconsjavascript">
+						<i class="devicons devicons-javascript text-grey"></i>
+						<p>
+							JAVASCRIPT
+						</p>
+					</div>
+					<div class="deviconsjquery">
+						<i class="devicons devicons-jquery text-grey"></i>
+						<p>
+							JQUERY
+						</p>
+					</div>
+					<div class="deviconsgit">
+						<i class="devicons devicons-git text-grey"></i>
+						<p>
+							GIT
+						</p>
+					</div>
+					<div class="deviconsnodejs_small">
+						<i class="devicons devicons-nodejs_small text-grey"></i>
+						<p>
+							NODE.JS
+						</p>
+					</div>
+					<div class="deviconsnpm">
+						<i class="devicons devicons-npm text-grey"></i>
+						<p>
+							NPM
+						</p>
+					</div>
+				</div>
+				<div class="text-center techrow">
+					<div class="deviconsbootstrap">
+						<i class="devicons devicons-bootstrap text-grey"></i>
+						<p class="toggleShow">
+							BOOTSTRAP
+						</p>
+					</div>
+					<div class="deviconsmaterializecss">
+						<i class="devicons devicons-materializecss text-grey"></i>
+						<p class="toggleShow">
+							MATERIALIZE
+						</p>
+					</div>
+					<div class="deviconsheroku">
+						<i class="devicons devicons-heroku text-grey"></i>
+						<p class="toggleShow">
+							HEROKU
+						</p>
+					</div>
+					<div class="deviconsgithub_badge">
+						<i class="devicons devicons-github_badge text-grey"></i>
+						<p class="toggleShow">
+							GITHUB
+						</p>
+					</div>
+					<div class="deviconsmongodb">
+						<i class="devicons devicons-mongodb text-grey"></i>
+						<p class="toggleShow">
+							MONGODB
+						</p>
+					</div>
+					<div class="deviconsmysql">
+						<i class="devicons devicons-mysql text-grey"></i>
+						<p class="toggleShow">
+							MYSQL
+						</p>
+					</div>
+					<div class="deviconsreact">
+						<i class="devicons devicons-react text-grey"></i>
+						<p class="toggleShow">
+							REACT
+						</p>
+					</div>
+				</div>
+			</article>
+			<br />
+			<br />
+		</section>
 
-				<li>
-					<a class="portfolio text-grey hvr-grow">Portfolio</a>
-				</li>
-				<li>
-					<a class="contactMe text-grey hvr-grow">Contact Me</a>
-				</li>
-			</ul>
+		<section id="portfolioSection">
+				<div class="text-center">
+					<h2>Projects</h2>
+				</div>
+				<div class="row">
+					<div id="hangmanPic" class="col-md-4 portfolioPic hvr-grow">
+						<h5 class="text-center">Hangman</h5>
+						<a><img class="img-responsive portfolioPics" data-value="hangman" src="images/hangman_edited_bw_small.jpg" alt="hangman website pic"></a>
+					</div>
+					<div id="fetchPic" class="col-md-4 portfolioPic hvr-grow">
+						<h5 class="text-center">Fetch</h5>
+						<a><img class="img-responsive portfolioPics" data-value="fetch" src="images/fetch_edited_bw_small.jpg" alt="fetch website pic"></a>
+					</div>
+					<div id="weddingPic" class="col-md-4 portfolioPic hvr-grow">
+						<h5 class="text-center">Wedding</h5>
+						<a><img class="img-responsive portfolioPics" data-value="wedding" src="images/wedding_edited_bw_small.jpg" alt="wedding website pic"></a>
+					</div>
+				</div>
+				<div class="row">
+					<div id="mtgPic" class="col-md-4 portfolioPic hvr-grow">
+						<h5 class="text-center">MTG Console</h5>
+						<a><img class="img-responsive portfolioPics" data-value="mtg" src="images/mtg_console_edited_bw_small.jpg" alt="mtg console website pic"></a>
+					</div>
+					<div id="giphyPic" class="col-md-4 portfolioPic hvr-grow">
+						<h5 class="text-center">Giphy in a Jiffy</h5>
+						<a><img class="img-responsive portfolioPics" data-value="giphy" src="images/giphy_edited_bw_small.jpg" alt="giphy website pic"></a>
+					</div>
+					<div id="rangerPic" class="col-md-4 portfolioPic hvr-grow">
+						<h5 class="text-center">Ranger</h5>
+						<a><img class="img-responsive portfolioPics" data-value="ranger" src="images/ranger_edited_bw_small.jpg" alt="ranger website pic"></a>
+					</div>
+				</div>
 
-		</nav>
 
-		<section id="portfolioMain" class="container">
-			<div id="portfolioHeading" class="row text-center">
-				<h1>Projects</h1>
-			</div>
-			<div class="row">
-				<div class="col-md-4 portfolioPic hvr-grow">
-					<h4 class="text-center text-grey">Hangman</h4>
-					<img class="img-responsive portfolioPics" data-value="hangman" src="images/hangman_edited_bw_small.jpg" alt="hangman website pic">
+		</section>
+
+		<section id="contactSection">
+			<h2 class="text-center">Contact Me</h2>
+			<div id="inputs">
+				<div id="nameRow" class="row">
+					<div class="col-md-5">
+						<label for="nameInput">Name:</label>
+						<input id="nameInput" type="text" name="name" class="form-control" placeholder="Your Name" aria-describedby="nameInput">
+					</div>
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-5">
+						<label for="emailInput">Email:</label>
+						<input id="emailInput" type="email" name="_replyto" class="form-control" placeholder="Your Email" aria-describedby="emailInput">
+					</div>
 				</div>
-				<div class="col-md-4 portfolioPic hvr-grow">
-					<h4 class="text-center text-grey">Fetch</h4>
-					<img class="img-responsive portfolioPics" data-value="fetch" src="images/fetch_edited_bw_small.jpg" alt="fetch website pic">
+				<div id="textarea" class="row">
+					<div class="form-group">
+						<label for="messageInput">Message:</label>
+						<textarea class="form-control" name="message" rows="5" id="messageInput"></textarea>
+					</div>
 				</div>
-				<div class="col-md-4 portfolioPic hvr-grow">
-					<h4 class="text-center text-grey">Wedding</h4>
-					<img class="img-responsive portfolioPics" data-value="wedding" src="images/wedding_edited_bw_small.jpg" alt="wedding website pic">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 portfolioPic hvr-grow">
-					<h4 class="text-center text-grey">MTG Console</h4>
-					<img class="img-responsive portfolioPics" data-value="mtg" src="images/mtg_console_edited_bw_small.jpg" alt="mtg console website pic">
-				</div>
-				<div class="col-md-4 portfolioPic hvr-grow">
-					<h4 class="text-center text-grey">Giphy Giph</h4>
-					<img class="img-responsive portfolioPics" data-value="giphy" src="images/giphy_edited_bw_small.jpg" alt="giphy website pic">
-				</div>
-				<div class="col-md-4 portfolioPic hvr-grow">
-					<h4 class="text-center text-grey">Ranger</h4>
-					<img class="img-responsive portfolioPics" data-value="ranger" src="images/ranger_edited_bw_small.jpg" alt="ranger website pic">
+				<div class="row">
+					<button id="sendButton" class="btn btn-lg">Send <i class="fa fa-send"></i></button>
 				</div>
 			</div>
 		</section>
 
+		<div class="modal fade" id="modalTemplate" tabindex="-1" role="dialog" aria-labelledby="modalTitle">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h3 class="modal-title text-center" id="modalTitle"></h3>
+					</div>
+					<div class="modal-body">
+						<img id="modalImg" class="img-responsive" src="images/main-profile.jpg" alt="placeholder" />
 
-	</section>
+						<ul id="modalList">
 
-	<section id="contactSection">
-		<nav id="contactNav" class="navbar navbar-inverse parent-col">
-			<ul class="nav navbar-nav navbar-left">
-				<li>
-					<a class="aboutMe text-grey hvr-grow">About Me</a>
-				</li>
+						</ul>
+						<p id="modalDesc">
 
-				<li>
-					<a class="resume text-grey hvr-grow dropdown-toggle" data-toggle="dropdown">Social Links
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="text-center" href="https://www.linkedin.com/in/jessematherne/" target="_blank">linkedIn</a></li>
-						<li>
-							<a class="text-center" href="https://github.com/jessephilip" target="_blank">gitHub</a></li>
-						<li>
-							<a class="text-center" href="https://www.facebook.com/jpmatherne" target="_blank">faceBook</a></li>
-					</ul>
-				</li>
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<a id="modalGithub" class="btn color-github" href="#" target="_blank">Github <i class="devicons devicons-github_badge"></i></a>
+						<a id="modalHeroku" class="btn color-heroku" href="#" target="_blank">Heroku <i class="devicons devicons-heroku"></i></a>
 
-				<li>
-					<a class="navbar-brand resume" href="" target="_blank">
-						<img class="brand-image img-responsive img-circle hvr-grow" src="images/main-profile-bw.jpg" alt="Jesse Matherne profile picture">
-					</a>
-				</li>
-
-				<li>
-					<a class="portfolio text-grey hvr-grow">Portfolio</a>
-				</li>
-				<li>
-					<a class="contactMe text-grey hvr-grow">Contact Me</a>
-				</li>
-			</ul>
-
-		</nav>
-
-		<h1 class="text-center">Contact Me</h1>
-		<div id="inputs">
-			<div id="nameRow" class="row">
-				<div class="col-md-5">
-					<label for="nameInput">Name:</label>
-					<input id="nameInput" type="text" name="name" class="form-control" placeholder="Your Name" aria-describedby="nameInput">
-				</div>
-				<div class="col-md-2">
-				</div>
-				<div class="col-md-5">
-					<label for="emailInput">Email:</label>
-					<input id="emailInput" type="email" name="_replyto" class="form-control" placeholder="Your Email" aria-describedby="emailInput">
-				</div>
-			</div>
-			<div id="textarea" class="row">
-				<div class="form-group">
-					<label for="messageInput">Message:</label>
-					<textarea class="form-control" name="message" rows="5" id="messageInput"></textarea>
-				</div>
-			</div>
-			<div class="row">
-				<button id="sendButton" class="btn btn-lg">Send <i class="fa fa-send"></i></button>
-			</div>
-		</div>
-	</section>
-
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h1 class="modal-title text-center" id="modalTitle">New message</h1>
-				</div>
-				<div class="modal-body">
-					<img id="modalImg" class="img-responsive" src="images/main-profile.jpg" alt="placeholder" />
-
-					<ul id="modalList">
-
-					</ul>
-					<p id="modalDesc">
-
-					</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<a id="modalGithub" class="btn color-github" href="#" target="_blank">Github <i class="devicons devicons-github_badge"></i></a>
-					<a id="modalHeroku" class="btn color-heroku" href="#" target="_blank">Heroku <i class="devicons devicons-heroku"></i></a>
-
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</main>
 
 	<!-- jQuery -->
 	<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
