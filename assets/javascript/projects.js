@@ -137,11 +137,44 @@ const portfolio = {
             "Javascript",
             "jQuery",
             "Bootstrap",
-            "Google Fonts"
+            "Google Fonts",
         ],
         description: "Giphy in a Jiffy is a simple application which uses https://api.giphy.com/ to generate giphys based on the user's input. It was one of my first forays into dynamically generated content."
     },
     resume: {
         url: "https://drive.google.com/file/d/0B5lpNINnrwjkWHRzRkc0RWE4eGM/view?usp=sharing"
+    },
+
+	shout: {
+        name: "Shout",
+        photo: "images/shout_edited.jpg",
+        photo_bw: "images/shout_edited_bw.jpg",
+        photo_small: "images/shout_edited_small.jpg",
+        photo_small_bw: "images/shout_edited_bw_small.jpg",
+        heroku: "https://thisisshout.herokuapp.com/",
+        github: "https://github.com/jessephilip/shout",
+        tech: [
+            "HTML",
+            "CSS",
+            "Javascript",
+            "jQuery",
+            "Bootstrap",
+            "Google Fonts",
+			"Font Awesome",
+			"Alertify.js",
+            "Node.js",
+            "NPM",
+            "MongoDb",
+			"OAuth 1.0a",
+			"OAuth 2.0"
+        ],
+		npm: [
+			"Body-Parser", "Express", "Mongoose", "Axios", "Babel", "DotENV", "React", "Webpack", "Twitter"
+		],
+        description: "Shout is a social networking solution designed to let the user type one message and send that message to all his or her social networks simultaneously. Shout is a solo project still in its infancy. Currently, the user can send messages through Twitter and LinkedIn. Several more networks are already in development."
+    },
+    resume: {
+        url: "https://drive.google.com/file/d/0B5lpNINnrwjkWHRzRkc0RWE4eGM/view?usp=sharing"
     }
+
 };

@@ -321,6 +321,62 @@ main {
 	visibility: visible;
 }
 
+.deviconsgrunt p {
+	visibility: hidden;
+}
+
+.deviconsgrunt:hover p {
+	visibility: visible;
+}
+
+.deviconsruby p {
+	visibility: hidden;
+}
+
+.deviconsruby:hover p {
+	visibility: visible;
+}
+
+.deviconsphp p {
+	visibility: hidden;
+}
+
+.deviconsphp:hover p {
+	visibility: visible;
+}
+
+.deviconsjava p {
+	visibility: hidden;
+}
+
+.deviconsjava:hover p {
+	visibility: visible;
+}
+
+.deviconsandroid p {
+	visibility: hidden;
+}
+
+.deviconsandroid:hover p {
+	visibility: visible;
+}
+
+.deviconssass p {
+	visibility: hidden;
+}
+
+.deviconssass:hover p {
+	visibility: visible;
+}
+
+.deviconstrello p {
+	visibility: hidden;
+}
+
+.deviconstrello:hover p {
+	visibility: visible;
+}
+
 /* icon color changes */
 
 .deviconshtml5:hover, .devicons-html5:hover  {
@@ -377,6 +433,34 @@ main {
 
 .devicons-materializecss:hover, .deviconsmaterializecss:hover {
     color: #ee6e73;
+}
+
+.devicons-grunt:hover, .deviconsgrunt:hover {
+    color: #e48632;
+}
+
+.devicons-ruby_rough:hover, .deviconsruby:hover {
+    color: #cc342d;
+}
+
+.devicons-php:hover, .deviconsphp:hover {
+    color: #8892bf;
+}
+
+.devicons-java:hover, .deviconsjava:hover {
+    color: #e00000;
+}
+
+.devicons-android:hover, .deviconsandroid:hover {
+    color: #77c159;
+}
+
+.devicons-sass:hover, .deviconssass:hover {
+    color: #cf649a;
+}
+
+.devicons-trello:hover, .deviconstrello:hover {
+    color: #2d6380;
 }
 
 .fa-expand {
@@ -781,6 +865,10 @@ img.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
 
 #giphyPic:hover img {
     content: url("../images/giphy_edited_small.jpg");
+}
+
+#shoutPic:hover img {
+    content: url("../images/shout_edited_small.jpg");
 }
 
 #rangerPic:hover img {
