@@ -136,6 +136,11 @@ main {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+
+}
+
+.techrow i {
+	margin: 0 1vw;
 }
 
 .flex {

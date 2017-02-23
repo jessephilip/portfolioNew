@@ -1,18 +1,35 @@
+// this function handles the about me button clicks. also loads on page load.
 function loadAboutMe() {
+
+	// get the entire aboutMeSection
     var a = document.getElementById("aboutMeSection");
-    $("html,body").scrollTop(0),
-    $("#title-text").css("height", window.innerHeight),
-    $("#dialogue-text").css("margin-top", window.innerHeight / 4),
-    $("#resumeDiv").css("margin-top", window.innerHeight / 4),
-    $("#techArticle").css("margin-top", window.innerHeight / 4),
-    portfolioSection.className = "fadeOut",
-    contactSection.className = "fadeOut",
-    a.style.display = "initial",
-    a.className = "fadeIn",
-    portfolioSection.style.zIndex = 0,
-    contactSection.style.zIndex = 0,
-    a.style.zIndex = 1
+
+	// in case the user has scrolled down on a different page, this puts the page at the top of the content
+	$("html,body").scrollTop(0);
+
+	// set the height for #title-text to the height of the browser window
+    $("#title-text").css("height", window.innerHeight);
+
+	// space out the below sections in relation to the screen size
+    $("#dialogue-text").css("margin-top", window.innerHeight / 4);
+    $("#resumeDiv").css("margin-top", window.innerHeight / 4);
+    $("#techArticle").css("margin-top", window.innerHeight / 4);
+
+	// fade out the other sections
+	portfolioSection.className = "fadeOut";
+    contactSection.className = "fadeOut";
+
+	// in case a previous view has faded out the about me section, set display to initial and fade in
+    a.style.display = "initial";
+    a.className = "fadeIn";
+
+	// put other sections below the about me section
+    portfolioSection.style.zIndex = 0;
+    contactSection.style.zIndex = 0;
+    a.style.zIndex = 1;
 }
+
+// this does what the about me section does, but it does it for the portfolio section
 function loadPortfolio() {
     $("html,body").scrollTop(0);
     var a = document.getElementById("portfolioSection");
