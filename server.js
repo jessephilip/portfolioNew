@@ -25,9 +25,7 @@ app.use(express.static("assets"));
 // ---------- ROUTES ---------- //
 
 // route for the homepage
-app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname + "/portfolio.html"));
-});
+app.get("/", (req, res) => res.sendFile(path.join(__dirname + "/portfolio.html")));
 
 // route for sending mail
 app.post("/mail", (req, res) => {
@@ -45,6 +43,4 @@ app.post("/mail", (req, res) => {
 // ---------- END ---------- //
 
 // run server
-app.listen(process.env.PORT || 3000, function() {
-	console.log("Portfolio listening on localhost:" + PORT);
-});
+app.listen(process.env.PORT || 3000, () => console.log("Portfolio listening on:" + PORT));
