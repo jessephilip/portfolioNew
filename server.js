@@ -34,13 +34,12 @@ app.post("/mail", (req, res) => {
 	let msg = `${req.body.name} sent you this message: \n\n${req.body.message}`;
 
 	// send message via imported mailer
-	mailer(req.body.email, msg, (data) => {
-		res.send(data);
-	});
-
+	mailer(req.body.email, msg, data => res.send(data));
 });
 
 // ---------- END ---------- //
 
+const PORT = process.env.PORT || 3000;
+
 // run server
-app.listen(process.env.PORT || 3000, () => console.log("Portfolio listening on:" + PORT));
+app.listen(PORT, () => console.log(`Portfolio is up and running on Port: ${PORT}.`));

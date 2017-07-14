@@ -1,8 +1,8 @@
 // this function handles the about me button clicks. also loads on page load.
-function loadAboutMe() {
+function loadAboutMe () {
 
 	// get the entire aboutMeSection
-    var a = document.getElementById("aboutMeSection");
+    const a = document.getElementById("aboutMeSection");
 
 	// in case the user has scrolled down on a different page, this puts the page at the top of the content
 	$("html,body").scrollTop(0);
@@ -30,9 +30,9 @@ function loadAboutMe() {
 }
 
 // this does what the about me section does, but it does it for the portfolio section
-function loadPortfolio() {
+function loadPortfolio () {
     $("html,body").scrollTop(0);
-    var a = document.getElementById("portfolioSection");
+    const a = document.getElementById("portfolioSection");
     $("#portfolioSection").css("height", window.innerHeight),
     aboutMeSection.className = "fadeOut",
     contactSection.className = "fadeOut",
@@ -42,9 +42,9 @@ function loadPortfolio() {
     contactSection.style.zIndex = 0,
     aboutMeSection.style.zIndex = 0
 }
-function loadContactMe() {
+function loadContactMe () {
     $("html,body").scrollTop(0);
-    var a = document.getElementById("contactSection");
+    const a = document.getElementById("contactSection");
     portfolioSection.className = "fadeOut",
     aboutMeSection.className = "fadeOut",
     a.style.display = "initial",
