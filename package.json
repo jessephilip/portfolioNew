@@ -1,0 +1,23 @@
+{
+  "name": "my-website",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessephilip/my-website.git"
+  },
+  "author": "jessephilip@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessephilip/my-website/issues"
+  },
+  "homepage": "https://github.com/jessephilip/my-website#readme",
+  "dependencies": {
+    "@angular/cli": "^9.1.4",
+    "@nestjs/cli": "^7.1.5"
+  }
+}
