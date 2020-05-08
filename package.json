@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "docker-compose up"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,5 @@
     "url": "https://github.com/jessephilip/my-website/issues"
   },
   "homepage": "https://github.com/jessephilip/my-website#readme",
-  "dependencies": {
-    "@angular/cli": "^9.1.4",
-    "@nestjs/cli": "^7.1.5"
-  }
+  "dependencies": {}
 }
