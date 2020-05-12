@@ -2,8 +2,8 @@ setup:
   addons:
   - plan: heroku-postgresql
     as: DATABASE
-config:
-  DATABASE_URL: DATABASE_URL
+  config:
+    DATABASE_URL: DATABASE_URL
 
 build:
   docker:
