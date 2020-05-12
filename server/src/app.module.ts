@@ -6,9 +6,7 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-const user = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD;
-const database = process.env.DB_DATABASE_NAME;
+console.log('DATABASE URL', process.env.DATABASE_URL);
 
 const rootPath = join(__dirname, '..', 'client');
 
@@ -18,12 +16,7 @@ const rootPath = join(__dirname, '..', 'client');
       rootPath: rootPath,
     }),
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'postgres',
-      port: 5432,
-      username: user,
-      password: password,
-      database: database,
+      url: process.env.DATABASE_URL,
       entities: [],
       synchronize: true,
     }),
