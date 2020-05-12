@@ -6,8 +6,6 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-console.log('DATABASE URL', process.env.DATABASE_URL);
-
 const rootPath = join(__dirname, '..', 'client');
 
 @Module({
