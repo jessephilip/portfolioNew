@@ -16,4 +16,6 @@ WORKDIR /client
 
 RUN npm install && npm run build
 
-CMD [ "node" "dist/server/dist/main.js" ]
+WORKDIR /
+
+CMD [ "node", "server/dist/server/main.js" ]
