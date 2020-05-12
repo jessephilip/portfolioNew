@@ -12,12 +12,7 @@ const rootPath = join(__dirname, '..', 'client');
   imports: [
     ServeStaticModule.forRoot({
       rootPath: rootPath,
-    }),
-    TypeOrmModule.forRoot({
-      url: process.env.DATABASE_URL,
-      entities: [],
-      synchronize: true,
-    }),
+    })
   ],
   controllers: [AppController],
   providers: [AppService],
