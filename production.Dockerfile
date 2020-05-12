@@ -15,3 +15,5 @@ COPY ./client/ ./client/
 WORKDIR /client
 
 RUN npm install && npm run build
+
+CMD [ "node" "dist/server/dist/main.js" ]
