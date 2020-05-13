@@ -19,6 +19,7 @@ const databaseUrl = process.env.DATABASE_URL;
       rootPath: rootPath,
     }),
     TypeOrmModule.forRoot({
+      type: 'postgres',
       url: databaseUrl,
     }),
   ],
