@@ -7,6 +7,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 const rootPath = join(__dirname, '..', 'client');
+const databaseUrl = process.env.DATABASE_URL;
+
+console.log('DATABASE_URL', databaseUrl);
 
 @Module({
   imports: [
