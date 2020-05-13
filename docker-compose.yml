@@ -17,19 +17,15 @@ services:
   server:
     container_name: server
     command: npm run start:dev
-    image: node:12.16.3-alpine
+    image: node:lts-alpine
     env_file:
       - .env
-    environment:
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_USERNAME: ${DB_USERNAME}
-      DB_DATABASE: ${DB_DATABASE_NAME}
     volumes:
       - ./server:/usr/src/server
       - ./client/dist/client:/user/src/server/dist/
     working_dir: /usr/src/server
     ports:
-      - 8080:3000
+      - 80:3000
       - 9229:9229
     links:
       - postgres
