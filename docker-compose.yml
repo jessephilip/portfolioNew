@@ -16,7 +16,7 @@ services:
 
   server:
     container_name: server
-    command: npm run start:dev
+    command: npm run start:debug
     image: node:lts-alpine
     env_file:
       - .env
