@@ -4,8 +4,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 
 const rootPath = join(__dirname, '..', 'client');
 const databaseUrl = process.env.DATABASE_URL;
@@ -22,8 +21,9 @@ const databaseUrl = process.env.DATABASE_URL;
       type: 'postgres',
       url: databaseUrl,
     }),
+    AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
