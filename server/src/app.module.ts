@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 
 import { AuthModule } from './auth/auth.module';
+import { WeatherModule } from './weather/weather.module';
 
 const rootPath = join(__dirname, '..', 'client');
 const databaseUrl = process.env.DATABASE_URL;
@@ -22,6 +23,7 @@ const databaseUrl = process.env.DATABASE_URL;
       url: databaseUrl,
     }),
     AuthModule,
+    WeatherModule,
   ],
   controllers: [],
   providers: [],
