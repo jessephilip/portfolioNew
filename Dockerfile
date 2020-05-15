@@ -14,7 +14,7 @@ COPY ./client/ ./client/
 
 WORKDIR /client
 
-RUN npm install && npm run build --prod
+RUN npm install && npm run prod
 
 WORKDIR /
 
