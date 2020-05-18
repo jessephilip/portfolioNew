@@ -25,7 +25,7 @@ services:
       - ./client/dist/client:/user/src/server/dist/
     working_dir: /usr/src/server
     ports:
-      - 80:3000
+      - ${LOCALHOST_PORT}:3000
       - 9229:9229
     links:
       - postgres
