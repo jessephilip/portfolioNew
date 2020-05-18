@@ -1,6 +1,6 @@
 interface GetWeatherRequest {
-  lng: number;
   lat: number;
+  lon: number;
 }
 
 export default GetWeatherRequest;

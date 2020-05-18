@@ -1,1 +1,48 @@
-<p>{{ weather | json }}</p>
+<section class="other">other stuff</section>
+<section class="right-shelf">
+  <section class="weather" *ngIf="weather$ | async; let weather; else: spinner">
+    <header>
+      <div class="row">
+        <h1>{{ weather.main.temp }}</h1>
+        <img
+          *ngFor="let w of weather.weather"
+          [src]="displayWeatherIcon(w.icon)"
+          [title]="setWeatherIconTitle(w.main, w.description)"
+        />
+      </div>
+    </header>
+    <main>
+      <p>Feels Like: {{ weather.main.feels_like }}</p>
+      <p>
+        Wind: {{ weather.wind.speed }} mph
+        {{ displayWindDirection(weather.wind.deg) }}
+      </p>
+      <p>Humidity: {{ weather.main.humidity }}%</p>
+      <p>Pressure: {{ weather.main.pressure }}</p>
+      <p>Cloud Coverage: {{ weather.clouds.all }}%</p>
+      <p *ngIf="weather.rain">
+        Rain Fall in Last 3 Hours: {{ weather.rain["3h"] }}
+      </p>
+      <p *ngIf="weather.snow">
+        Snow Fall in Last 3 Hours: {{ weather.snow["3h"] }}
+      </p>
+      <p>Sunrise: {{ calculateDate(weather.sys.sunrise) | date: "hh:mm a" }}</p>
+      <p>Sunset: {{ calculateDate(weather.sys.sunset) | date: "hh:mm a" }}</p>
+    </main>
+    <footer>
+      <p>{{ displayLocation(weather.name, weather.coord) }}</p>
+      <p>{{ calculateDate(weather.dt) | date: "medium" }}</p>
+    </footer>
+  </section>
+</section>
+
+<ng-template #spinner>
+  <div class="center">
+    <fa-icon
+      [icon]="faSpinner"
+      [spin]="true"
+      size="2x"
+      [styles]="{ color: '#6c5b7b' }"
+    ></fa-icon>
+  </div>
+</ng-template>

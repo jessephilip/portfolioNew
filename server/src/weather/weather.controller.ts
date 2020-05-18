@@ -1,16 +1,22 @@
-import { Body, Controller, HttpCode, Post } from '@nestjs/common';
+import { BadRequestException, Controller, Get, Query } from '@nestjs/common';
+import { throwError } from 'rxjs';
 
-import GetWeatherRequest from './requests/get-weather.request';
 import { WeatherService } from './weather.service';
 
 @Controller('weather')
 export class WeatherController {
   constructor(private weatherService: WeatherService) {}
 
-  // TODO: Refactor this route as a GET
-  @Post()
-  @HttpCode(200)
-  public getWeather(@Body() request: GetWeatherRequest) {
-    return this.weatherService.getWeather(request.lng, request.lat);
+  @Get()
+  public getWeather(@Query('lat') lat: number, @Query('lon') lon: number) {
+    if (
+      lat === undefined ||
+      lat === null ||
+      lon === undefined ||
+      lon === null
+    ) {
+      return throwError(new BadRequestException('Lat and Lon are required'));
+    }
+    return this.weatherService.getWeather(lat, lon);
   }
 }
