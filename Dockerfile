@@ -2,6 +2,10 @@ FROM node:lts-alpine
 
 EXPOSE 3000
 
+ENV GOOGLE_APPLICATION_CREDENTIALS=/tmp/keys/jessematherne-5355483b7aea.json
+
+VOLUME $GOOGLE_APPLICATION_CREDENTIALS:/tmp/keys/jessematherne-5355483b7aea.json
+
 COPY ./server/ ./server/
 
 WORKDIR /server
