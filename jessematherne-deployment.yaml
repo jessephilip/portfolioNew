@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jessematherne-web
+  labels:
+    app: jessematherne
+spec:
+  selector:
+    matchLabels:
+      app: jessematherne
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: jessematherne
+        tier: web
+    spec:
+      containers:
+        - name: jessematherne-app
+          image: gcr.io/jessematherne/jessematherne:v1
+          ports:
+            - containerPort: 3000
