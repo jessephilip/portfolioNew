@@ -8,7 +8,6 @@ services:
     env_file:
       - .env
     volumes:
-      - ./secrets:/usr/src/secrets
       - ./server:/usr/src/server
       - ./client/dist/client:/user/src/server/dist/
     working_dir: /usr/src/server
