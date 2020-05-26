@@ -20,4 +20,14 @@ export class WeatherService {
       )
       .pipe(map(response => response.data));
   }
+
+  public testWeather() {
+    const fetchIcon$ = this.httpService.request<ArrayBuffer>({
+      method: 'GET',
+      responseType: 'blob',
+      url: 'http://openweathermap.org/img/wn/01d@2x.png',
+    });
+
+    return fetchIcon$.pipe(map(x => x.data));
+  }
 }

@@ -1,4 +1,6 @@
-<section class="other">other stuff</section>
+<section class="other">
+  <img [src]="testSrc" width="200" height="200" alt="i wish this would work" />
+</section>
 <section class="right-shelf">
   <section class="weather" *ngIf="weather$ | async; let weather; else: spinner">
     <header>
