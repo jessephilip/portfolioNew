@@ -4,7 +4,7 @@ import { CommandBus, QueryBus } from '@nestjs/cqrs';
 import DeleteUserCommand from './commands/delete-user.command';
 import RegisterCommand from './commands/register.command';
 import UpdateUserCommand from './commands/update-user.command';
-import GetUserByEmailQuery from './queries/get-user.query';
+import GetUserByEmailQuery from './queries/get-user-by-email.query';
 import LoginQuery from './queries/login.query';
 import LoginRequest from './requests/login.request';
 import RegisterRequest from './requests/register.request';

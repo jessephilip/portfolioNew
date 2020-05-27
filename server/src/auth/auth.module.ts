@@ -7,7 +7,7 @@ import { AuthController } from './auth.controller';
 import DeleteUserCommandHandler from './commands/delete-user.command.handler';
 import RegisterCommandHandler from './commands/register.command.handler';
 import UpdateUserCommandHandler from './commands/update-user.command.handler';
-import GetUserByEmailQueryHandler from './queries/get-user.query.handler';
+import GetUserByEmailQueryHandler from './queries/get-user-by-email.query.handler';
 import LoginQueryHandler from './queries/login.query.handler';
 
 const queryHandlers = [LoginQueryHandler, GetUserByEmailQueryHandler];

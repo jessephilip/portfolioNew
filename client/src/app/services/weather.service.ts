@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { from } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 
@@ -62,19 +61,13 @@ enum CardinalDirections {
 export class WeatherService {
   private position$ = from(this.getPosition());
 
-  constructor(private http: HttpClient, private domSanitizer: DomSanitizer) {}
+  constructor(private http: HttpClient) {}
 
   public getWeather$ = this.position$.pipe(
     concatMap((x) =>
       this.http.get<WeatherResponse>(`api/weather/?lat=${x.lat}&lon=${x.lon}`)
     )
   );
-
-  public testWeather() {
-    return this.http.get('api/weather/test', {
-      responseType: 'blob' as 'json',
-    });
-  }
 
   public getCardinalDirection(degree: number) {
     if (degree === undefined || degree === null) {

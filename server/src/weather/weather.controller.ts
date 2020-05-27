@@ -19,9 +19,4 @@ export class WeatherController {
     }
     return this.weatherService.getWeather(lat, lon);
   }
-
-  @Get('test')
-  public testWeather() {
-    return this.weatherService.testWeather();
-  }
 }
