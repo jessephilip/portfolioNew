@@ -8,9 +8,9 @@ services:
     env_file:
       - .env
     volumes:
-      - ./server:/usr/src/server
-      - ./client/dist/client:/user/src/server/dist/
-    working_dir: /usr/src/server
+      - ./server:/app/server
+      - ./client/dist/client:/app/server/dist/
+    working_dir: /app/server
     ports:
       - ${LOCALHOST_PORT}:3000
       - 9229:9229

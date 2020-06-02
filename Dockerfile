@@ -2,20 +2,22 @@ FROM node:lts-alpine
 
 EXPOSE 3000
 
-COPY ./server/ ./server/
+RUN mkdir /app
 
-WORKDIR /server
+COPY ./server/ ./app/server/
+
+WORKDIR /app/server
 
 RUN npm install && npm run build
 
 WORKDIR /
 
-COPY ./client/ ./client/
+COPY ./client/ ./app/client/
 
-WORKDIR /client
+WORKDIR /app/client
 
 RUN npm install && npm run prod
 
 WORKDIR /
 
-CMD [ "node", "server/dist/server/main.js" ]
+CMD [ "node", "app/server/dist/server/main.js" ]

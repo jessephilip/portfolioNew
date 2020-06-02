@@ -1,4 +1,4 @@
-import EMAIL_REGEXP from '../../../constants/email.regex';
+import EMAIL_REGEXP from '../../constants/email.regex';
 import IsRequiredError from '../errors/is-required.error';
 
 class UserDomainEntity {
