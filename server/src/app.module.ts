@@ -1,14 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 
 import { AuthModule } from './auth/auth.module';
 import { WeatherModule } from './weather/weather.module';
 
 const rootPath = join(__dirname, '..', 'client');
-const databaseUrl = process.env.DATABASE_URL;
 
 @Module({
   imports: [
@@ -17,10 +15,6 @@ const databaseUrl = process.env.DATABASE_URL;
     }),
     ServeStaticModule.forRoot({
       rootPath: rootPath,
-    }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      url: databaseUrl,
     }),
     AuthModule,
     WeatherModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import { WeatherService } from '../../services/weather.service';
@@ -8,13 +8,11 @@ import { WeatherService } from '../../services/weather.service';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent {
   constructor(private weatherService: WeatherService) {}
 
   public weather$ = this.weatherService.getWeather$;
   public faSpinner = faSpinner;
-
-  public ngOnInit(): void {}
 
   public displayWeatherIcon(code: string) {
     return `http://openweathermap.org/img/wn/${code}@2x.png`;

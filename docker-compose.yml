@@ -1,19 +1,6 @@
 version: "3.7"
 
 services:
-  postgres:
-    container_name: postgres
-    image: postgres:12
-    env_file:
-      - .env
-    environment:
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_DB: ${DB_DATABASE_NAME}
-    volumes:
-      - ./database/scripts:/docker-entrypoint-initdb.d
-      - pgdata:/var/lib/postgresql/data
-
   server:
     container_name: server
     command: npm run start:debug
@@ -21,16 +8,9 @@ services:
     env_file:
       - .env
     volumes:
-      - ./server:/usr/src/server
-      - ./client/dist/client:/user/src/server/dist/
-    working_dir: /usr/src/server
+      - ./server:/app/server
+      - ./client/dist/client:/app/server/dist/
+    working_dir: /app/server
     ports:
       - ${LOCALHOST_PORT}:3000
       - 9229:9229
-    links:
-      - postgres
-    depends_on:
-      - postgres
-
-volumes:
-  pgdata:

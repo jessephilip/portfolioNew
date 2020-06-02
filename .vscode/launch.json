@@ -16,6 +16,17 @@
       "address": "0.0.0.0",
       "skipFiles": ["<node_internals>/**"],
       "sourceMaps": true
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Debug Nest Framework",
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}/server",
+      "port": 9229,
+      "restart": true,
+      "protocol": "inspector",
+      "outFiles": ["$workspaceRoot/server/dist/server"]
     }
   ]
 }
